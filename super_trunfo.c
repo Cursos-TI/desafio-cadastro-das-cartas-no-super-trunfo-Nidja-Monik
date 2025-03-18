@@ -84,8 +84,7 @@ int main () {
     printf("PIB: 62954 bilhoes de reais \n");
     printf("Numeros de pontos turisticos: 60 \n"); 
 
-    printf ("Obrigada! \n"); 
-
+    
     return 0; 
 
 }
