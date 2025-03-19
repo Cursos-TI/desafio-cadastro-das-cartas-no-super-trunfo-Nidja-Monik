@@ -5,8 +5,12 @@
 
 int main () {
 
-    int pontosturisticos, populacao;
-    float area, PIB, densidadepopulacional, PIBpercapita; 
+    // Declarando variáveis 
+
+    int pontosturisticos;
+    unsigned long int populacao; 
+    float area, PIB, densidadepopulacional, PIBpercapita;
+    float SuperPoder;  
     char estado;
     char codigodacarta [20];
     char nomedacidade [50];
@@ -67,7 +71,11 @@ int main () {
     densidadepopulacional = (float) populacao / area; 
     PIBpercapita = (float) PIB / populacao; 
 
-    // Sera apresentado abaixo os dados fornecidos pelo usuario para as duas cartas
+    // Calculando o Super Poder
+
+    SuperPoder = (float)populacao + area + PIB + (float)pontosturisticos + PIBpercapita; 
+
+    // Será apresentado abaixo os dados fornecidos pelo usuario para as duas cartas
 
     printf("Segue abaixo os dados da carta 1 e carta 2 \n");
 
