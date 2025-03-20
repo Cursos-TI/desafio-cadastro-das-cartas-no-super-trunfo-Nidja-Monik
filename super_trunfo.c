@@ -7,13 +7,31 @@ int main () {
 
     // Declarando variáveis 
 
-    int pontosturisticos;
-    unsigned long int populacao; 
-    float area, PIB, densidadepopulacional, PIBpercapita;
-    float SuperPoder;  
+    int pontosturisticos1;
+    int pontosturisticos2;
+
+    unsigned long int populacao1; 
+    unsigned long int populacao2;
+
+    float area1;
+    float area2;
+
+    float PIB1;
+    float PIB2;
+
+    float densidadepopulacional1;
+    float densidadepopulacional2;
+
+    float PIBpercapita1;
+    float PIBpercapita2;
+
+    float SuperPoder1;
+    float SuperPoder2;
+
     char estado;
     char codigodacarta [20];
     char nomedacidade [50];
+    int  resultado, Carta1, Carta2;
     
     // DADOS DA CARTA 1 
 
@@ -29,16 +47,16 @@ int main () {
     scanf("%s", &nomedacidade);
 
     printf("Qual o numero de habitantes? \n");
-    scanf("%d", &populacao);
+    scanf("%d", &populacao1);
 
     printf("Qual a area da cidade? \n");
-    scanf("%f", &area);
+    scanf("%f", &area1);
 
     printf("Qual o PIB da cidade? \n");
-    scanf("%f", &PIB);
+    scanf("%f", &PIB1);
 
     printf("Qual a quantidade de pontos turisticos na cidade? \n");
-    scanf ("%d", &pontosturisticos);
+    scanf ("%d", &pontosturisticos1);
 
 
     // DADOS DA CARTA 2
@@ -55,25 +73,29 @@ int main () {
     scanf("%s", &nomedacidade);
 
     printf("Qual o numero de habitantes? \n");
-    scanf("%d", &populacao);
+    scanf("%d", &populacao2);
 
     printf("Qual a area da cidade? \n");
-    scanf("%f", &area);
+    scanf("%f", &area2);
 
     printf("Qual o PIB da cidade? \n");
-    scanf("%f", &PIB);
+    scanf("%f", &PIB2);
 
     printf("Qual a quantidade de pontos turisticos na cidade? \n");
-    scanf ("%d", &pontosturisticos);
+    scanf ("%d", &pontosturisticos2);
 
     // Cálculo para a Densidade Populacional e o PIB Per Capita
 
-    densidadepopulacional = (float) populacao / area; 
-    PIBpercapita = (float) PIB / populacao; 
+    densidadepopulacional1 = (float) populacao1 / area1; 
+    PIBpercapita1 = (float) PIB1 / populacao1; 
+
+    densidadepopulacional2 = (float) populacao2 / area2; 
+    PIBpercapita2 = (float) PIB2 / populacao2; 
 
     // Calculando o Super Poder
 
-    SuperPoder = (float)populacao + area + PIB + (float)pontosturisticos + PIBpercapita; 
+    SuperPoder1 = (float)populacao1 + area1 + PIB1 + (float)pontosturisticos1 + PIBpercapita1 + (1/densidadepopulacional1);
+    SuperPoder2 = (float)populacao2 + area2 + PIB2 + (float)pontosturisticos2 + PIBpercapita2 + (1/densidadepopulacional2);
 
     // Será apresentado abaixo os dados fornecidos pelo usuario para as duas cartas
 
@@ -87,8 +109,8 @@ int main () {
     printf("Area: 11401 Km ao quadrado \n");
     printf("PIB: 103281 bilhoes de reais \n"); 
     printf("Numeros de pontos turisticos: 40 \n");
-    printf("Densidade Populacional: %.2f habitantes por Km quadrado \n", densidadepopulacional);
-    printf("PIB per Capita: %.2f reais \n", PIBpercapita);  
+    printf("Densidade Populacional: %.2f habitantes por Km quadrado \n", densidadepopulacional1);
+    printf("PIB per Capita: %.2f reais \n", PIBpercapita1);  
 
     printf("DADOS DA CARTA 2: \n");
     printf("Estado: B \n");
@@ -98,9 +120,15 @@ int main () {
     printf("Area: 6398 Km ao quadrado \n");
     printf("PIB: 62954 bilhoes de reais \n");
     printf("Numeros de pontos turisticos: 60 \n"); 
-    printf("Densidade Populacional: %.2f habitantes por Km quadrado \n", densidadepopulacional); 
-    printf("PIB per Capita: %.2f reais \n", PIBpercapita); 
+    printf("Densidade Populacional: %.2f habitantes por Km quadrado \n", densidadepopulacional2); 
+    printf("PIB per Capita: %.2f reais \n", PIBpercapita2); 
 
+    // Comparações entre as duas cartas
+
+    resultado = Carta1 > Carta2; 
+
+    printf("A Carta 1 tem uma população de %lu, área de %.2f, PIB de %.2f, %d pontos turísticos, densidade populacional de %.2f, PIB per Capita de %.2f e %.2f de super poder\n", populacao1, area1, PIB1, pontosturisticos1, densidadepopulacional1, PIBpercapita1, SuperPoder1);
+    printf("A Carta 2 tem uma população de %lu, área de %.2f, PIB de %.2f, %d pontos turísticos, densidade populacional de %.2f, PIB per Capita de %.2f e %.2f de super poder\n", populacao2, area2, PIB2, pontosturisticos2, densidadepopulacional2, PIBpercapita2, SuperPoder2);
     
     return 0; 
 
