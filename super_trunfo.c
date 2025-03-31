@@ -31,7 +31,6 @@ int main () {
     char estado;
     char codigodacarta [20];
     char nomedacidade [50];
-    int  resultado, Carta1, Carta2;
     
     // DADOS DA CARTA 1 
 
@@ -125,10 +124,16 @@ int main () {
 
     // Comparações entre as duas cartas
 
-    resultado = Carta1 > Carta2; 
+    printf("Segue abaixo a comparação entre a Carta 1 e a Carta 2: \n"); 
 
-    printf("A Carta 1 tem uma população de %lu, área de %.2f, PIB de %.2f, %d pontos turísticos, densidade populacional de %.2f, PIB per Capita de %.2f e %.2f de super poder\n", populacao1, area1, PIB1, pontosturisticos1, densidadepopulacional1, PIBpercapita1, SuperPoder1);
-    printf("A Carta 2 tem uma população de %lu, área de %.2f, PIB de %.2f, %d pontos turísticos, densidade populacional de %.2f, PIB per Capita de %.2f e %.2f de super poder\n", populacao2, area2, PIB2, pontosturisticos2, densidadepopulacional2, PIBpercapita2, SuperPoder2);
+    printf("populacao1 > populacao2: %lu\n", populacao1 > populacao2);
+    printf("area1 > area2: %d\n", area1 > area2); 
+    printf("PIB1 > PIB2: %d\n", PIB1 > PIB2); 
+    printf("pontosturisticos1 > pontosturisticos2: %d\n", pontosturisticos1 > pontosturisticos2);
+    printf("densidadepopulacional1 > densidadepopulacional2: %d\n", densidadepopulacional1 > densidadepopulacional2);
+    printf("PIBpercapita1 > PIBpercapita2: %d\n", PIBpercapita1 > PIBpercapita2); 
+    printf("SuperPoder1 > SuperPoder2: %d\n", SuperPoder1 > SuperPoder2); 
+
     
     return 0; 
 
