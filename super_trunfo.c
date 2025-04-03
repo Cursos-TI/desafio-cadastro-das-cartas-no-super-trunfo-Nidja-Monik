@@ -134,6 +134,21 @@ int main () {
     printf("PIBpercapita1 > PIBpercapita2: %d\n", PIBpercapita1 > PIBpercapita2); 
     printf("SuperPoder1 > SuperPoder2: %d\n", SuperPoder1 > SuperPoder2); 
 
+    // A carta que tiver maior população será a carta vencedora
+    
+    if (populacao1 > populacao2) {
+        printf("A carta 1 venceu! \n");
+    } else {
+        printf("A carta 2 venceu!\n"); 
+    }
+
+    // Será apresentado abaixo o resultado mediante a comparação da população entre as duas cartas
+
+    printf("Comparação de Cartas (Atributo: População): \n");
+    printf("Carta 1 - Manaus (AM): 2064000 \n"); 
+    printf("Carta 2 - Salvador (BA): 2418000 \n");
+    printf("Resultado: Carta 2 (Salvador) venceu! \n");
+
     
     return 0; 
 
