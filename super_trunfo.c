@@ -9,6 +9,7 @@ int main () {
 
     int pontosturisticos1;
     int pontosturisticos2;
+    int escolhaJogador;
 
     unsigned long int populacao1; 
     unsigned long int populacao2;
@@ -124,8 +125,6 @@ int main () {
 
     // Comparações entre as duas cartas
 
-    printf("Segue abaixo a comparação entre a Carta 1 e a Carta 2: \n"); 
-
     printf("populacao1 > populacao2: %lu\n", populacao1 > populacao2);
     printf("area1 > area2: %d\n", area1 > area2); 
     printf("PIB1 > PIB2: %d\n", PIB1 > PIB2); 
@@ -134,19 +133,80 @@ int main () {
     printf("PIBpercapita1 > PIBpercapita2: %d\n", PIBpercapita1 > PIBpercapita2); 
     printf("SuperPoder1 > SuperPoder2: %d\n", SuperPoder1 > SuperPoder2); 
 
-    // A carta que tiver maior população será a carta vencedora
-    
-    if (populacao1 > populacao2) {
-        printf("A carta 1 venceu! \n");
-    } else {
-        printf("A carta 2 venceu!\n"); 
+    // Menu interativo para o jogador escolher qual atributo quer comparar
+
+    printf("Comparação entre os atributos da Carta 1 e a Carta 2: \n"); 
+
+    printf("Escolha qual atributo você quer comparar:\n");
+    printf("1. População\n");
+    printf("2. Área\n");
+    printf("3. PIB\n");
+    printf("4. Pontos Turísticos\n");
+    printf("5. Densidade Demográfica\n"); 
+    scanf("%d", &escolhaJogador);
+
+    switch (escolhaJogador) 
+    {
+        case 1:
+        if (populacao1 > populacao2) {
+            printf("A carta 1-Manaus VENCEU\n");
+        } else if (populacao2 > populacao1) {
+            printf("A carta 2-Salvador VENCEU\n"); 
+        } else {
+            printf("Houve EMPATE\n"); 
+        }
+        break;
+
+        case 2: 
+        if (area1 > area2) {
+            printf("A carta 1-Manaus VENCEU\n");
+        } else if (area2 > area1) {
+            printf("A carta 2-Salvador VENCEU\n"); 
+        } else {
+            printf("Houve EMPATE\n"); 
+        }
+        break; 
+
+        case 3:
+        if (PIB1 > PIB2) {
+            printf("A carta 1-Manaus VENCEU\n");
+        } else if (PIB2 > PIB1) {
+            printf("A carta 2-Salvador VENCEU\n"); 
+        } else {
+            printf("Houve EMPATE\n");
+        }
+        break;
+
+        case 4:
+        if (pontosturisticos1 > pontosturisticos2) {
+            printf("A carta 1-Manaus VENCEU\n");
+        } else if (pontosturisticos2 > pontosturisticos1) {
+            printf("A carta 2-Salvador VENCEU\n"); 
+        } else {
+            printf("Houve EMPATE\n");
+        }
+        break;
+
+        case 5:
+        if (densidadepopulacional1 > densidadepopulacional2) {
+            printf("A carta 1-Manaus VENCEU\n");
+        } else if (densidadepopulacional2 > densidadepopulacional1) {
+            printf("A carta 2-Salvador VENCEU\n"); 
+        } else {
+            printf("Houve EMPATE\n");
+        }
+        break;
+
+        default: 
+        printf("Opção Inválida\n");
+        break;
     }
 
-    // Será apresentado abaixo o resultado mediante a comparação da população entre as duas cartas
+    // Exibição dos resultados após a comparação dos atributos
 
-    printf("Comparação de Cartas (Atributo: População): \n");
-    printf("Carta 1 - Manaus (AM): 2064000 \n"); 
-    printf("Carta 2 - Salvador (BA): 2418000 \n");
+    printf(" ### Comparação entre a carta Manaus e a carta Salvador ### \n");
+    printf("Atributo comparado: População \n"); 
+    printf("A população da carta 1-Manaus é 2064000 e a da carta 2-Salvador é 2418000 \n");
     printf("Resultado: Carta 2 (Salvador) venceu! \n");
 
     
