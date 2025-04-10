@@ -9,7 +9,8 @@ int main () {
 
     int pontosturisticos1;
     int pontosturisticos2;
-    int escolhaJogador;
+    int escolhaJogador, escolhaJogador2;
+    int resultado1, resultado2;
 
     unsigned long int populacao1; 
     unsigned long int populacao2;
@@ -137,7 +138,7 @@ int main () {
 
     printf("Comparação entre os atributos da Carta 1 e a Carta 2: \n"); 
 
-    printf("Escolha qual atributo você quer comparar:\n");
+    printf("Escolha qual atributo você quer comparar primeiro:\n");
     printf("1. População\n");
     printf("2. Área\n");
     printf("3. PIB\n");
@@ -148,53 +149,23 @@ int main () {
     switch (escolhaJogador) 
     {
         case 1:
-        if (populacao1 > populacao2) {
-            printf("A carta 1-Manaus VENCEU\n");
-        } else if (populacao2 > populacao1) {
-            printf("A carta 2-Salvador VENCEU\n"); 
-        } else {
-            printf("Houve EMPATE\n"); 
-        }
+        resultado1 = populacao1 > populacao2 ? 1 : 0;
         break;
 
         case 2: 
-        if (area1 > area2) {
-            printf("A carta 1-Manaus VENCEU\n");
-        } else if (area2 > area1) {
-            printf("A carta 2-Salvador VENCEU\n"); 
-        } else {
-            printf("Houve EMPATE\n"); 
-        }
+        resultado1 = area1 > area2 ? 1 : 0;
         break; 
 
         case 3:
-        if (PIB1 > PIB2) {
-            printf("A carta 1-Manaus VENCEU\n");
-        } else if (PIB2 > PIB1) {
-            printf("A carta 2-Salvador VENCEU\n"); 
-        } else {
-            printf("Houve EMPATE\n");
-        }
+        resultado1 = PIB1 > PIB2 ? 1 : 0;
         break;
 
         case 4:
-        if (pontosturisticos1 > pontosturisticos2) {
-            printf("A carta 1-Manaus VENCEU\n");
-        } else if (pontosturisticos2 > pontosturisticos1) {
-            printf("A carta 2-Salvador VENCEU\n"); 
-        } else {
-            printf("Houve EMPATE\n");
-        }
+        resultado1 = pontosturisticos1 > pontosturisticos2 ? 1 : 0;
         break;
 
         case 5:
-        if (densidadepopulacional1 > densidadepopulacional2) {
-            printf("A carta 1-Manaus VENCEU\n");
-        } else if (densidadepopulacional2 > densidadepopulacional1) {
-            printf("A carta 2-Salvador VENCEU\n"); 
-        } else {
-            printf("Houve EMPATE\n");
-        }
+        resultado1 = densidadepopulacional1 > densidadepopulacional2 ? 1 : 0;
         break;
 
         default: 
@@ -202,12 +173,60 @@ int main () {
         break;
     }
 
-    // Exibição dos resultados após a comparação dos atributos
+    printf("Escolha o segundo atributo para comparar: \n");
+    printf("Atenção: você deve escolher um atributo diferente do primeiro.\n");
+    printf("1. População\n");
+    printf("2. Área\n");
+    printf("3. PIB\n");
+    printf("4. Pontos Turísticos\n");
+    printf("5. Densidade Demográfica\n"); 
+    scanf("%d", &escolhaJogador2);
 
-    printf(" ### Comparação entre a carta Manaus e a carta Salvador ### \n");
-    printf("Atributo comparado: População \n"); 
-    printf("A população da carta 1-Manaus é 2064000 e a da carta 2-Salvador é 2418000 \n");
-    printf("Resultado: Carta 2 (Salvador) venceu! \n");
+    if (escolhaJogador == escolhaJogador2) {
+        printf("Você escolheu o mesmo atributo\n");
+    } else {
+        switch (escolhaJogador2) 
+        {
+            case 1:
+            resultado2 = populacao1 > populacao2 ? 1 : 0;
+            break;
+    
+            case 2: 
+            resultado2 = area1 > area2 ? 1 : 0;
+            break; 
+    
+            case 3:
+            resultado2 = PIB1 > PIB2 ? 1 : 0;
+            break;
+    
+            case 4:
+            resultado2 = pontosturisticos1 > pontosturisticos2 ? 1 : 0;
+            break;
+    
+            case 5:
+            resultado2 = densidadepopulacional1 > densidadepopulacional2 ? 1 : 0;
+            break;
+    
+            default: 
+            printf("Opção Inválida\n");
+            break;
+            
+        }
+    }
+    
+    // Os dois atributos escolhidos pelo usuário serão somados para decidir qual carta venceu
+
+    printf("Vamos somar o valor dos atributos para cada carta...\n");
+    printf("A carta com maior valor após a soma vence o jogo\n");
+
+    if (resultado1 && resultado2) 
+    {
+        printf("A carta 1-Manaus VENCEU\n");
+    } else if (resultado1 != resultado2) {
+        printf("A carta 2-Salvador VENCEU\n");
+    } else {
+        printf("Houve EMPATE\n");
+    }
 
     
     return 0; 
