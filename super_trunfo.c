@@ -219,15 +219,14 @@ int main () {
     printf("Vamos somar o valor dos atributos para cada carta...\n");
     printf("A carta com maior valor após a soma vence o jogo\n");
 
-    if (resultado1 && resultado2) 
-    {
-        printf("A carta 1-Manaus VENCEU\n");
+    if (resultado1 && resultado2) {
+        printf("### A carta 1-Manaus VENCEU ###\n");
     } else if (resultado1 != resultado2) {
-        printf("A carta 2-Salvador VENCEU\n");
+        printf("### Houve EMPATE ###\n");
     } else {
-        printf("Houve EMPATE\n");
+        printf("### A carta 2-Salvador VENCEU ###\n");
     }
-
+    
     
     return 0; 
 
